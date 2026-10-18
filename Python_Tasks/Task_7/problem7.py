@@ -3,8 +3,13 @@
 # Link: https://www.hackerrank.com/challenges/alphabet-rangoli/problem
 
 import string
-n = int(input())
-letters = string.ascii_lowercase
-for i in range(n - 1, -n, -1):
-    row = "-".join(letters[abs(i):n])
-    print((row[::-1] + row[1:]).center(4 * n - 3, "-"))
+
+def print_rangoli(size):
+    letters = string.ascii_lowercase
+    for i in range(size - 1, -size, -1):
+        row = "-".join(letters[abs(i):size])
+        print((row[::-1] + row[1:]).center(4 * size - 3, "-"))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
